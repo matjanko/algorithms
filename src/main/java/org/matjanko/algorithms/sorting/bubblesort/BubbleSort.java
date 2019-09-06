@@ -5,9 +5,9 @@ import java.util.List;
 public class BubbleSort {
     public static void sort(List<Integer> list) {
         int temp;
-        int iterator = 1;
+        int iterator;
 
-        while (iterator > 0) {
+        do {
             iterator = 0;
             for (int i = 0; i < list.size() - 1; i++) {
                 if (list.get(i) > list.get(i + 1)) {
@@ -18,5 +18,6 @@ public class BubbleSort {
                 }
             }
         }
+        while (iterator > 0);
     }
 }
