@@ -11,12 +11,12 @@ public class BubbleSortTest {
     @Test
     public void sortMethodTest() {
         // given
-        List<Integer> sortedNumbers;
         List<Integer> unsortedNumbers = getUnsortedNumbers();
         List<Integer> expectedSortedNumbers = getSortedNumbers();
 
         // when
-        sortedNumbers = BubbleSort.sort(unsortedNumbers);
+        BubbleSort.sort(unsortedNumbers);
+        List<Integer> sortedNumbers = new ArrayList<>(unsortedNumbers);
 
         // then
         Assert.assertEquals(sortedNumbers, expectedSortedNumbers);
