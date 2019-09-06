@@ -4,20 +4,22 @@ import java.util.List;
 
 public class BubbleSort {
     public static void sort(List<Integer> list) {
+        int elements = list.size();
+        int switches;
         int temp;
-        int iterator;
 
         do {
-            iterator = 0;
-            for (int i = 0; i < list.size() - 1; i++) {
+            switches = 0;
+            for (int i = 0; i < elements - 1; i++) {
                 if (list.get(i) > list.get(i + 1)) {
                     temp = list.get(i);
                     list.set(i, list.get(i + 1));
                     list.set(i + 1, temp);
-                    iterator++;
+                    switches++;
                 }
             }
+            elements -= 1;
         }
-        while (iterator > 0);
+        while (switches > 0);
     }
 }
