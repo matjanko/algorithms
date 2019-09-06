@@ -1,3 +1,10 @@
+# IntelliJ files
+.idea/
+/target
+
+# User files
+*.iml
+
 # Compiled class file
 *.class
 
