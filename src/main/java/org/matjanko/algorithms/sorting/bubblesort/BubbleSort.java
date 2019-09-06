@@ -5,19 +5,18 @@ import java.util.List;
 public class BubbleSort {
     public static void sort(List<Integer> list) {
         int temp;
-        int iterator = 0;
+        int iterator = 1;
 
-        for (int i = 0; i < list.size() - 1; i++) {
-            if (list.get(i) > list.get(i + 1)) {
-                temp = list.get(i);
-                list.set(i, list.get(i + 1));
-                list.set(i + 1, temp);
-                iterator++;
+        while (iterator > 0) {
+            iterator = 0;
+            for (int i = 0; i < list.size() - 1; i++) {
+                if (list.get(i) > list.get(i + 1)) {
+                    temp = list.get(i);
+                    list.set(i, list.get(i + 1));
+                    list.set(i + 1, temp);
+                    iterator++;
+                }
             }
-        }
-
-        if (iterator > 0) {
-            sort(list);
         }
     }
 }
