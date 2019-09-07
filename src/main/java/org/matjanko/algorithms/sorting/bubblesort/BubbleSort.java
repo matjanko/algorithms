@@ -10,12 +10,12 @@ public class BubbleSort {
 
         do {
             switches = 0;
-            for (int i = 0; i < elements - 1; i++) {
+            for (int i = 0; i < elements - 1; ++i) {
                 if (list.get(i) > list.get(i + 1)) {
                     temp = list.get(i);
                     list.set(i, list.get(i + 1));
                     list.set(i + 1, temp);
-                    switches++;
+                    ++switches;
                 }
             }
             elements -= 1;
