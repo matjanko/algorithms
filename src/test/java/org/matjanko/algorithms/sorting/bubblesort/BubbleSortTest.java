@@ -11,15 +11,53 @@ public class BubbleSortTest {
     @Test
     public void sortMethodTest() {
         // given
-        List<Integer> unsortedNumbers = getUnsortedNumbers();
+        List<Integer> numbers = getUnsortedNumbers();
         List<Integer> expectedSortedNumbers = getSortedNumbers();
 
         // when
-        BubbleSort.sort(unsortedNumbers);
-        List<Integer> sortedNumbers = new ArrayList<>(unsortedNumbers);
+        BubbleSort.sort(numbers);
 
         // then
-        Assert.assertEquals(sortedNumbers, expectedSortedNumbers);
+        Assert.assertEquals(numbers, expectedSortedNumbers);
+    }
+
+    @Test
+    public void sortMethodTestWhenNumberListIsEmpty() {
+        // given
+        List<Integer> emptyList = new ArrayList<>();
+        List<Integer> expectedEmptyList = new ArrayList<>();
+
+        // when
+        BubbleSort.sort(emptyList);
+
+        // then
+        Assert.assertEquals(emptyList, expectedEmptyList);
+    }
+
+    @Test
+    public void sortMethodTestWhenNumberListHasOneNumber() {
+        // given
+        List<Integer> numbers = new ArrayList<>(Arrays.asList(3));
+        List<Integer> expectedSortedNumbers = new ArrayList<>(Arrays.asList(3));
+
+        // when
+        BubbleSort.sort(numbers);
+
+        // then
+        Assert.assertEquals(numbers, expectedSortedNumbers);
+    }
+
+    @Test
+    public void sortMethodTestWhenNumberListHasTwoNumbers() {
+        // given
+        List<Integer> numbers = new ArrayList<>(Arrays.asList(5, 2));
+        List<Integer> expectedSortedNumbers = new ArrayList<>(Arrays.asList(2, 5));
+
+        // when
+        BubbleSort.sort(numbers);
+
+        // then
+        Assert.assertEquals(numbers, expectedSortedNumbers);
     }
 
     private List<Integer> getUnsortedNumbers() {
